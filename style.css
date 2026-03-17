@@ -1,0 +1,276 @@
+/* 1. Global Reset & Montserrat Font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #fff;
+    color: #1a1a1a;
+    line-height: 1.5;
+    scroll-behavior: smooth;
+}
+
+/* 2. Navigasi */
+nav {
+    padding: 25px 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255,255,255,0.95);
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.logo {
+    font-weight: 900;
+    font-size: 1.2rem;
+    letter-spacing: 0px;
+}
+
+nav ul { display: flex; list-style: none; }
+nav ul li { margin-left: 25px; }
+nav ul li a { 
+    text-decoration: none; 
+    color: #444; 
+    font-size: 0.85rem; 
+    font-weight: 600; 
+}
+
+/* 3. Hero Section - Original Style */
+.hero {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    max-width: 1250px;
+    margin: auto;
+}
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 7vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -3px;
+    margin-bottom: 25px;
+}
+
+.outline {
+    color: transparent;
+    -webkit-text-stroke: 1.5px #1a1a1a;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: #777;
+    max-width: 480px;
+    font-weight: 500;
+    margin-bottom: 35px;
+}
+
+.btn-hero {
+    display: inline-block;
+    padding: 18px 45px;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+/* 4. Bento Grid - Original Style */
+.grid-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 240px;
+    gap: 15px;
+    padding: 60px 5%;
+    max-width: 1300px;
+    margin: auto;
+}
+
+.grid-item {
+    position: relative;
+    overflow: hidden;
+    background: #f9f9f9;
+    border-radius: 12px;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.grid-item.tall { grid-row: span 2; }
+.grid-item.wide { grid-column: span 2; }
+
+.content-box {
+    padding: 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tag-strategy {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #aaa;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+}
+
+.content-box h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.content-box p {
+    font-size: 0.85rem;
+    color: #666;
+    font-weight: 500;
+}
+
+.label {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    padding: 6px 14px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    border-radius: 6px;
+}
+
+/* 5. UPGRADE: Layout Section About / The Story */
+.about-section {
+    padding: 120px 5%;
+    background-color: #fff;
+}
+
+.about-container {
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Layout asimetris profesional */
+    gap: 40px;
+    align-items: start;
+}
+
+.about-header h2 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    line-height: 1.1;
+}
+
+.about-content p {
+    font-size: 1.2rem;
+    color: #444;
+    font-weight: 500;
+    line-height: 1.8;
+}
+
+/* 6. UPGRADE: Contact Section & Interactive Cards */
+.contact-section {
+    padding: 100px 5%;
+    background: #fdfdfd;
+}
+
+.contact-container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.contact-header {
+    font-size: 2.8rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.contact-sub {
+    font-size: 1rem;
+    color: #777;
+    font-weight: 500;
+    margin-bottom: 50px;
+}
+
+.contact-flex {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 15px;
+}
+
+/* Animasi dan Gaya Klik pada Contact Card */
+.contact-card {
+    padding: 30px;
+    background: #fff;
+    border: 1.5px solid #f0f0f0;
+    border-radius: 15px;
+    text-decoration: none; /* Hilangkan garis bawah link */
+    display: block;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); /* Transisi halus */
+}
+
+.contact-card:hover {
+    transform: translateY(-10px); /* Efek melayang saat hover */
+    border-color: #1a1a1a;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.06); /* Shadow modern */
+}
+
+.c-label {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #ccc;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.contact-card:hover .c-label {
+    color: #888;
+}
+
+.c-value {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #000;
+}
+
+/* 7. Footer */
+footer {
+    padding: 50px;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #999;
+}
+
+/* 8. Responsive Design */
+@media (max-width: 850px) {
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .about-header h2 { font-size: 2.2rem; }
+}
+
+@media (max-width: 768px) {
+    .grid-gallery { grid-template-columns: 1fr; grid-auto-rows: auto; }
+    .grid-item.tall, .grid-item.wide { grid-row: span 1; grid-column: span 1; height: 250px; }
+    .contact-header { font-size: 2.2rem; }
+}
